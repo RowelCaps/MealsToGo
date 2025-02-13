@@ -9,14 +9,11 @@ export const restaurantsRequest = (location = "37.7749295,-122.4194155") => {
       reject("Not found");
     }
 
-    console.log(location + " location mofo");
     resolve(mock);
   });
 };
 
 export const restaurantsTransform = ({ results = [] }) => {
-
-  console.log("transformers");
   const mappedResult = results.map((restaurant) => {
     restaurant.photos = restaurant.photos.map((p) => {
       return mockImages[Math.ceil(Math.random() * (mockImages.length - 1))];
@@ -28,7 +25,6 @@ export const restaurantsTransform = ({ results = [] }) => {
       isClosedTemporarily: restaurant.business_status === "CLOSED_TEMPORARILY",
     };
   });
-
 
   return camelize(mappedResult);
 };

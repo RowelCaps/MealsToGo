@@ -27,12 +27,10 @@ export const RestaurantsContextProvider = ({ children }) => {
       restaurantsRequest(loc)
         .then(restaurantsTransform)
         .then((result) => {
-          console.log(result + " Fuck men");
           setRestaurants(result);
           isLoading = false;
         })
         .catch((err) => {
-          console.log("Error: ", err);
           setIsLoading(false);
           setError(err);
         });
