@@ -13,9 +13,9 @@ import {
   Icon,
 } from "./restaurant-info-card.styles.js";
 import { Text } from "../../../components/typography/text.component.js";
+import { Favorite } from "../../../components/favorites/favorite.component.js";
 
 export default function RestaurantInfoCard({ restaurant = {} }) {
-
   const {
     name = "some restaurant",
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
@@ -32,6 +32,7 @@ export default function RestaurantInfoCard({ restaurant = {} }) {
 
   return (
     <RestaurantCard elevation={5}>
+      <Favorite restaurant={restaurant.item} />
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       <Info>
         <Text variant="label">{name}</Text>

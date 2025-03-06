@@ -19,8 +19,6 @@ export default function RestaurantDetail({ route }) {
 
   const { restaurant } = route.params;
 
-  console.log(restaurant);
-
   return (
     <SafeArea>
       <RestaurantInfoCard restaurant={restaurant} />
